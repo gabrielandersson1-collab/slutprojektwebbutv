@@ -1,0 +1,43 @@
+.Rubriker {
+    display: flex;
+    align-items: center; /* centrera vertikalt */
+    padding: 5px 30px;
+    border-bottom: 2px solid rgb(0, 0, 0); /* synlig kant */
+    border-top: 2px solid rgb(0, 0, 0); 
+}
+
+.logo {
+    font-size: 2rem;
+    margin-right: 200px; /* mellanrum mellan rubrik och länkar */
+}
+
+.nav {
+    display: flex;
+    gap: 30px; /* mellanrum mellan länkarna */
+}
+.nav a {
+    text-decoration: none;
+    color: black;
+    padding: 7px 15px;
+    margin-top: 7px;
+    font-size: 1.3rem; /* ändra till större värde om du vill */
+}
+
+.hero {
+    width: 100%;
+    height: 80vh; /* 80% av höjden på viewport */
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 30px; /* avstånd från header/div */
+}
+
+.bakgrundstext{
+    margin-right: 100px;
+    margin-top: 40px;
+}
+
