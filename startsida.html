@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nordic Gloves</title>
     <link rel="stylesheet" href="startsida.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
 </head>
 
-<header>
+
 <body>
- <div class="Rubriker">
+    
+<header>
+  <div class="Rubriker">
         <h1 class="logo">Nordic Gloves</h1>
 
     <nav class="nav">
@@ -19,23 +22,38 @@
         <a href="">Om oss</a>
 
     </nav>
-</div>
+ </div>
 </header>
 
 <section class="hero">
-    <img src="Herobild.png" alt="Nordic Gloves hero image">
-
+    <div class="hero-slides">
+    <img src="Herobild.png" class="slide active" alt="Nordic Gloves hero image">
+    <img src="Jul.png" class="slide" alt="Bild 2">
+    <img src="Berg.png" class="slide" alt="Bild 3">
+    </div>
+    
+    <h1 class="hero-text">Nordic Gloves</h1>
       <div class="hero-content">
         <a href="#" class="btn">Herr</a>
         <a href="#" class="btn">Dam</a>
     </div>
-    
+
+     <!-- Bildnummer längst ner till vänster -->
+    <div class="slide-number">1 / 3</div>
+
+    <!-- Progress-bar längst ner -->
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+
 </section>
 
 <div class="bakgrundstext">
 <p>Nordic Gloves är ditt svenska märke för högkvalitativa och hållbara vantar. Vi kombinerar stil, komfort och funktion så att dina händer håller sig varma och skyddade – oavsett väder. Våra produkter är noggrant designade för både vardag och utomhusaktiviteter, med material som är slitstarka och miljövänliga. Hos Nordic Gloves får du inte bara ett par vantar, utan ett löfte om kvalitet, komfort och långvarig användning..</p>
 </div>
 
+
+
+<script src="startsida.js"></script>
 </body>
 </html>
 
