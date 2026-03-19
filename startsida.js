@@ -1,17 +1,18 @@
 const slides = document.querySelectorAll(".slide");
 const totalSlides = slides.length;
 let currentIndex = 0;
+let progress = 0;
 
 const slideNumber = document.querySelector(".slide-number");
 const progressBar = document.querySelector(".progress-bar");
 
 const slideDuration = 7000; // 5 sekunder per slide
-let progress = 0; // procent för progress-bar
 let progressInterval;
 
 // Visa första bilden direkt
 slides[currentIndex].classList.add("active");
 slideNumber.textContent = `${currentIndex + 1} / ${totalSlides}`;
+progressBar.style.height = `${progress}%`;
 
 // Funktion för nästa bild
 function showNextSlide() {
@@ -31,9 +32,17 @@ function showNextSlide() {
 
 // Progress-bar funktion
 function updateProgress() {
-    progress += 100 / (slideDuration / 100); // varje 100ms
-    if (progress >= 100) progress = 100;
-    progressBar.style.width = `${progress}%`;
+   progress += 100 / (slideDuration / 100);
+
+    if (progress >= 100) {
+         progressBar.style.height = `0%`;
+        progress = 0; // startar om direkt utan att “fastna”
+    } 
+    else{
+        progressBar.style.height = `${progress}%`;
+    }
+
+   
 }
 
 // Start timer
