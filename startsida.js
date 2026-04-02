@@ -42,7 +42,7 @@ function updateProgress() {
         progressBar.style.height = `${progress}%`;
     }
 
-   
+    
 }
 
 // Start timer
