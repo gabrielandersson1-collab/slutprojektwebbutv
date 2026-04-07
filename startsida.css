@@ -225,3 +225,115 @@ body {
     margin-top: 20px; /* testa 20–40px tills det känns bra */
     display: inline-block; /* viktigt för att margin ska funka snyggt */
 }
+
+/* Gemensam wrapper för alla fyra produktsektioner */
+.produkt-sektion {
+    padding: 70px 30px;
+}
+
+/* Varannan sektion har vit bakgrund för att byta av mot den grå sidan */
+.lader-sektion {
+    background-color: white;
+}
+
+.goretex-sektion {
+    background-color: var(--ljus);
+}
+
+.ull-sektion {
+    background-color: white;
+}
+
+/* Intro-texten ovanför produkterna */
+.sektion-intro {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sektion-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--morkt);
+    margin: 0 0 15px 0;
+}
+
+.sektion-beskrivning {
+    font-size: 0.98rem;
+    color: rgb(119, 119, 119);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Layout med stor sidebild + produktgrid bredvid varandra */
+.produkt-layout {
+    display: flex;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto 50px;
+    align-items: stretch;
+}
+
+/* Läder: bild till vänster, kort till höger */
+.lader-layout {
+    flex-direction: row;
+}
+
+/* Gore-Tex: kort till vänster, bild till höger */
+.goretex-layout {
+    flex-direction: row-reverse;
+}
+
+/* Den stora bilden tar upp lika mycket som produktgridet */
+.kollektion-bild-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    min-height: 500px;
+}
+
+.kollektion-bild {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.kollektion-bild-wrapper:hover .kollektion-bild {
+    transform: scale(1.04); /* subtil zoom vid hover */
+}
+
+/* Etikett i hörnet på den stora bilden */
+.bild-etikett {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--morkt);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+}
+
+/* Ljus variant för bilder med mörk bakgrund */
+.bild-etikett-ljus {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 2x2 grid för fyra produktkort bredvid den stora bilden */
+.produkt-grid-liten {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
