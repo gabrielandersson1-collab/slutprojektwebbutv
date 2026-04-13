@@ -338,4 +338,130 @@ body {
     gap: 18px;
 }
 
-/* Kommentar... */
+/* ================================================
+   PRODUKTKORT – gemensam stil
+   ================================================ */
+
+.produkt-kort {
+    background-color: var(--ljus);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lader-sektion .produkt-kort {
+    background-color: var(--ljus); /* grå kort mot vit sektion */
+}
+
+.goretex-sektion .produkt-kort {
+    background-color: white; /* vita kort mot grå sektion */
+}
+
+.ull-sektion .produkt-kort {
+    background-color: var(--ljus);
+}
+
+.produkt-kort:hover {
+    transform: translateY(-6px); /* kortet lyfter sig vid hover */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.produkt-bild-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.produkt-bild {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.produkt-kort:hover .produkt-bild {
+    transform: scale(1.06); /* zoom-effekt vid hover */
+}
+
+/* Etiketter på produktkort – t.ex. "Nyhet", "Bästsäljare" */
+.produkt-etikett {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--morkt);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 2px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+}
+
+.etikett-bestsaljare {
+    background-color: var(--guld);
+    color: var(--morkt);
+}
+
+.etikett-barn {
+    background-color: #4a90a4; /* blågrön för barn */
+}
+
+.etikett-nyhet {
+    background-color: var(--morkt);
+}
+
+.produkt-info {
+    padding: 16px;
+}
+
+.produkt-namn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0 0 4px 0;
+    color: var(--morkt);
+}
+
+.produkt-material {
+    font-size: 0.78rem;
+    color: #999;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+}
+
+.produkt-pris {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--morkt);
+    margin: 0 0 12px 0;
+}
+
+/* "Se mer"-länken på produktkorten */
+.produkt-knapp {
+    text-decoration: none;
+    color: var(--morkt);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--morkt);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Jost', sans-serif;
+}
+
+.produkt-knapp:hover {
+    color: var(--guld);
+    border-color: var(--guld);
+}
+
+/* Knappen "Se alla" centrerad under varje sektion */
+.se-alla-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
