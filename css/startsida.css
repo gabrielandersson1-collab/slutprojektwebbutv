@@ -1,7 +1,7 @@
 /* CSS-variabler för att enkelt ändra färger på ett ställe */
 :root {
     --morkt: rgb(26, 26, 46);
-    --guld: rgb(71, 70, 4);
+    --guld: rgb(167, 164, 4);
     --ljus: rgb(223, 223, 223);
     --vit: rgb(255, 255, 255);
     --text: rgb(51, 51, 51);
@@ -465,3 +465,78 @@ body {
     text-align: center;
     margin-top: 20px;
 }
+
+/* ================================================
+   ULLVANTAR – brett grid med sex produkter
+   ================================================ */
+
+.produkt-grid-bred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* sex kolumner på desktop */
+    gap: 18px;
+    max-width: 1300px;
+    margin: 0 auto 50px;
+}
+
+/* Bilderna lite kortare i det breda gridet */
+.produkt-grid-bred .produkt-bild-wrapper {
+    height: 220px;
+}
+
+/* ================================================
+   BARN & JUNIOR – banner + fyra kort
+   ================================================ */
+
+.barn-sektion {
+    padding: 0 0 70px 0; /* ingen padding ovanför – bannern går ända ut */
+    background-color: var(--ljus);
+}
+
+/* Bakgrundsbild-banner – MVG-krav: minst ett element med bakgrundsbild */
+.barn-banner {
+    background-image: url('');
+    background-size: cover;
+    background-position: center 30%;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.barn-banner-overlay {
+    background-color: rgba(26, 26, 46, 0.72);
+    padding: 50px 60px;
+    max-width: 650px;
+    margin-left: 80px;
+}
+
+.barn-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+    color: white;
+    margin: 0 0 15px 0;
+}
+
+.barn-undertext {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Fyra kort i ett grid under bannern */
+.barn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.barn-grid .produkt-kort {
+    background-color: white;
+}
+
+
