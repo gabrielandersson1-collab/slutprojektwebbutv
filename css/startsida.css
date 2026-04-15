@@ -5,10 +5,7 @@
     --ljus: rgb(223, 223, 223);
     --vit: rgb(255, 255, 255);
     --text: rgb(51, 51, 51);
-}
-
-
-
+} 
 
 body {
     background-color: rgb(239, 239, 239); /* ljusgrå */
@@ -39,6 +36,11 @@ body {
     margin-top: 7px;
     font-size: 1.3rem; /* ändra till större värde om du vill */
 }
+
+.nav a:hover {
+    color: var(--guld);
+}
+
 
 .hero {
     position: relative;
@@ -463,7 +465,7 @@ body {
 /* Knappen "Se alla" centrerad under varje sektion */
 .se-alla-wrapper {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* ================================================
@@ -537,6 +539,75 @@ body {
 
 .barn-grid .produkt-kort {
     background-color: white;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+
+footer {
+    background-color: var(--morkt);
+    color: white;
+    padding: 55px 30px 20px;
+}
+
+.footer-innehall {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    flex-wrap: wrap;
+}
+
+.footer-kolumn {
+    flex: 1;
+    min-width: 170px;
+}
+
+.footer-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--guld);
+    margin-top: 0;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 8px 0;
+}
+
+.footer-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-lista li {
+    margin-bottom: 9px;
+}
+
+.footer-lank {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-lank:hover {
+    color: var(--guld);
+}
+
+.copyright {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin: 0;
 }
 
 
