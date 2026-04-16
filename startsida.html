@@ -22,12 +22,28 @@
 
     <!-- Desktop-navigering -->
     <nav class="nav">
+        <a href="startsida.html">Startsida</a>
         <a href="produkter.html">Produkter</a>
         <a href="">Prislista</a>
-        <a href="">Om oss</a>
-
+        <a href="">Kontakt</a>
     </nav>
+
+     <!-- Hamburgar-knapp – visas bara på mobil via media query – MVG-krav -->
+        <button class="hamburgare-knapp" id="hamburgarKnapp" aria-label="Öppna meny" aria-expanded="false">
+            <span class="hamburgare-linje"></span>
+            <span class="hamburgare-linje"></span>
+            <span class="hamburgare-linje"></span>
+        </button>
+    </div>
+
  </div>
+ <!-- Mobil-meny som fälls ner – styrs av JavaScript via klassen "oppen" -->
+    <nav class="mobil-meny" id="mobilMeny" aria-hidden="true">
+        <a href="startsida.html" class="mobil-lank">Startsida</a>
+        <a href="produkter.html" class="mobil-lank">Produkter</a>
+        <a href="prislista.html" class="mobil-lank">Prislista</a>
+        <a href="kontakt.html" class="mobil-lank">Kontakt</a>
+    </nav>
 </header>
 
 <section class="hero">
@@ -499,6 +515,24 @@
  
         <div class="se-alla-wrapper">
             <a href="produkter.html" class="btn btn-mork">Se barnkollektionen</a>
+        </div>
+    </section>
+
+     <!-- ============================================================
+         KVALITETS-BANNER – bakgrundsbild med fördelar
+         ============================================================ -->
+    <section class="kvalitet-sektion">
+        <div class="kvalitet-overlay">
+            <h2 class="kvalitet-rubrik">Kvalitet du kan lita på</h2>
+            <p class="kvalitet-text">Varje par Nordic Gloves är tillverkat med omsorg och de bästa naturmaterialen från Skandinavien.</p>
+            <!-- Korrekt UL-lista – VG-krav -->
+            <ul class="kvalitet-lista">
+                <li>Hållbara naturmaterial</li>
+                <li>Producerat i Sverige</li>
+                <li>Fri frakt över 500 kr</li>
+                <li>30 dagars öppet köp</li>
+            </ul>
+            <a href="kontakt.html" class="btn">Kontakta oss</a>
         </div>
     </section>
 </main>

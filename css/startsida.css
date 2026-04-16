@@ -41,6 +41,75 @@ body {
     color: var(--guld);
 }
 
+/* Hamburgar-knapp – syns bara på mobil – MVG-krav */
+.hamburgare-knapp {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburgare-linje {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+/* X-animation när menyn är öppen */
+.hamburgare-knapp.oppen .hamburgare-linje:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgare-knapp.oppen .hamburgare-linje:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgare-knapp.oppen .hamburgare-linje:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobil-meny – dold som standard, visas med klassen "oppen" */
+.mobil-meny {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+
+.mobil-meny.oppen {
+    display: flex;
+}
+
+.mobil-lank {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    padding: 14px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-family: 'Jost', sans-serif;
+    transition: background-color 0.2s;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.mobil-lank:hover {
+    background-color: var(--ljus);
+}
+
+/* ================================================
+   HERO – bildspel
+   ================================================ */
 
 .hero {
     position: relative;
@@ -540,6 +609,76 @@ body {
 .barn-grid .produkt-kort {
     background-color: white;
 }
+
+/* ================================================
+   KVALITETS-SEKTION MED BAKGRUNDSBILD – MVG-krav
+   ================================================ */
+
+.kvalitet-sektion {
+    /* Bakgrundsbild – MVG-krav: minst ett element ska ha bakgrundsbild */
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* parallax-effekt vid scrollning */
+    padding: 110px 30px;
+    text-align: center;
+}
+
+.kvalitet-overlay {
+    background-color: rgba(26, 26, 46, 0.78);
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 65px 55px;
+    border-radius: 4px;
+}
+
+.kvalitet-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+.kvalitet-text {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Lista med fördelar */
+.kvalitet-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 35px;
+}
+
+.kvalitet-lista li {
+    color: var(--guld);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-left: 18px;
+    position: relative;
+    font-family: 'Jost', sans-serif;
+}
+
+/* Streck framför varje punkt */
+.kvalitet-lista li::before {
+    content: '—';
+    position: absolute;
+    left: -2px;
+    color: var(--guld);
+}
+
 
 /* ================================================
    FOOTER

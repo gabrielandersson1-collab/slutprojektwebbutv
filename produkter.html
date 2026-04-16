@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nordic gloves produkter</title>
+    <link rel="stylesheet" href="css/startsida.css">
+    <link rel="stylesheet" href="css/produkter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+<!-- ============================================================
+     HEADER – samma som startsidan
+     ============================================================ -->
+<header>
+    <div class="Rubriker">
+        <h1 class="logo">Nordic Gloves</h1>
+        <nav class="nav">
+            <a href="startsida.html">Startsida</a>
+            <a href="produkter.html" class="nav-aktiv">Produkter</a>
+            <a href="prislista.html">Prislista</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <button class="hamburgare-knapp" id="hamburgarKnapp" aria-label="Öppna meny" aria-expanded="false">
+            <span class="hamburgare-linje"></span>
+            <span class="hamburgare-linje"></span>
+            <span class="hamburgare-linje"></span>
+        </button>
+    </div>
+    <nav class="mobil-meny" id="mobilMeny" aria-hidden="true">
+        <a href="startsida.html" class="mobil-lank">Startsida</a>
+        <a href="produkter.html" class="mobil-lank">Produkter</a>
+        <a href="prislista.html" class="mobil-lank">Prislista</a>
+        <a href="kontakt.html" class="mobil-lank">Kontakt</a>
+    </nav>
+
+    <!-- ============================================================
+         SIDHERO – banner för produktsidan
+         ============================================================ -->
+    <section class="sida-hero">
+        <div class="sida-hero-overlay">
+            <span class="overrubrik overrubrik-ljus">Nordic Gloves</span>
+            <h2 class="sida-hero-rubrik">Alla Produkter</h2>
+            <p class="sida-hero-text">Från klassiskt läder till tekniska Gore-Tex-lösningar – hitta vanten som passar dig.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SNABB-NAVIGATION – hoppa direkt till en kategori
+         Länkarna från startsidan (t.ex. #lader) scrollar hit – JS hanterar URL-hash
+         ============================================================ -->
+    <section class="snabb-nav-sektion">
+        <div class="snabb-nav-wrapper">
+            <a href="#lader"   class="snabb-nav-lank">Läder</a>
+            <a href="#goretex" class="snabb-nav-lank">Gore-Tex</a>
+            <a href="#ull"     class="snabb-nav-lank">Ull</a>
+            <a href="#barn"    class="snabb-nav-lank">Barn & Junior</a>
+            <a href="#herr"    class="snabb-nav-lank">Herr</a>
+            <a href="#dam"     class="snabb-nav-lank">Dam</a>
+        </div>
+    </section>
+</header>
+</body>
+</html>
