@@ -18,11 +18,16 @@ body {
     padding: 5px 30px;
     border-bottom: 2px solid rgb(0, 0, 0); /* synlig kant */
     border-top: 2px solid rgb(0, 0, 0); 
+     background-color: var(--vit);
+    position: relative;
 }
 
 .logo {
     font-size: 2rem;
     margin-right: 200px; /* mellanrum mellan rubrik och länkar */
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .nav {
@@ -750,3 +755,214 @@ footer {
 }
 
 
+
+/* ================================================
+   ANIMATIONER
+   ================================================ */
+
+/* Sektionerna tonas in när sidan laddas */
+@keyframes tonaIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.om-oss-sektion {
+    animation: tonaIn 0.9s ease forwards;
+}
+
+
+
+/* ================================================
+   RESPONSIV DESIGN – media queries 
+   ================================================ */
+
+/* Tablet (1100px och smalare) */
+@media (max-width: 1100px) {
+
+    /* Ullvantar: tre kolumner på tablet */
+    .produkt-grid-bred {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet (900px och smalare) */
+@media (max-width: 900px) {
+
+    .logo {
+        font-size: 1.6rem;
+        margin-right: 20px;
+    }
+
+    /* Göm desktop-nav och visa hamburgar-knapp */
+    .nav {
+        display: none;
+    }
+
+    .hamburgare-knapp {
+        display: flex;
+    }
+
+    /* Layouten med stor bild + kort staplas vertikalt */
+    .produkt-layout {
+        flex-direction: column;
+    }
+
+    /* Den stora bilden är inte lika hög på tablet */
+    .kollektion-bild-wrapper {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    /* Fortfarande 2x2 grid för korten */
+    .produkt-grid-liten {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Ullvantar: två kolumner på mindre tablet */
+    .produkt-grid-bred {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Barn-grid: två kolumner */
+    .barn-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Barn-banner overlay justeras */
+    .barn-banner-overlay {
+        margin-left: 30px;
+        padding: 35px 30px;
+    }
+
+    .om-oss-innehall {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .om-oss-foto {
+        height: 280px;
+    }
+
+    /* Hero-text anpassas för tablet */
+    .hero-text {
+        font-size: 2.8rem;
+        left: 40%;
+        top: 22%;
+    }
+
+    .hero-undertext {
+        left: 40%;
+        top: 34%;
+    }
+
+    .hero-content {
+        left: 40%;
+        gap: 20px;
+    }
+}
+
+/* Mobil (600px och smalare) */
+@media (max-width: 600px) {
+
+    .Rubriker {
+        padding: 5px 15px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        margin-right: 0;
+    }
+
+    /* Hero anpassas för mobil */
+    .hero-text {
+        font-size: 2rem;
+        left: 50%;
+        top: 22%;
+    }
+
+    .hero-undertext {
+        font-size: 0.75rem;
+        left: 50%;
+        top: 34%;
+        width: 80%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        letter-spacing: 2px;
+    }
+
+    .hero-content {
+        left: 50%;
+        gap: 12px;
+    }
+
+    /* Progress-baren tar för mycket plats på mobil */
+    .progress-bar-container {
+        display: none;
+    }
+
+    /* Bildnummer centreras */
+    .slide-number {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        bottom: 12px;
+    }
+
+    /* En kolumn på mobil för nästan alla grid */
+    .produkt-grid-liten {
+        grid-template-columns: 1fr;
+    }
+
+    .produkt-grid-bred {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .barn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produkt-sektion {
+        padding: 40px 15px;
+    }
+
+    .barn-sektion {
+        padding: 0 0 40px 0;
+    }
+
+    .barn-banner {
+        height: 280px;
+    }
+
+    .barn-banner-overlay {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 25px 20px;
+    }
+
+    .barn-rubrik {
+        font-size: 1.8rem;
+    }
+
+    .barn-grid {
+        padding: 0 15px;
+    }
+
+    .kvalitet-overlay {
+        padding: 35px 20px;
+    }
+
+    .om-oss-sektion {
+        padding: 40px 15px;
+    }
+
+    .footer-innehall {
+        flex-direction: column;
+        gap: 30px;
+    }
+}   
