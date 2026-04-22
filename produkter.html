@@ -35,6 +35,7 @@
         <a href="prislista.html" class="mobil-lank">Prislista</a>
         <a href="kontakt.html" class="mobil-lank">Kontakt</a>
     </nav>
+    </header>
 
     <!-- ============================================================
          SIDHERO – banner för produktsidan
@@ -60,7 +61,24 @@
             <a href="#herr"    class="snabb-nav-lank">Herr</a>
             <a href="#dam"     class="snabb-nav-lank">Dam</a>
         </div>
+    </section> <!-- ============================================================
+         FILTER-BAR – JavaScript filtrerar korten när man klickar
+         ============================================================ -->
+    <section class="filter-sektion">
+        <div class="filter-wrapper">
+            <span class="filter-etikett">Filtrera:</span>
+            <div class="filter-knappar">
+                <button class="filter-knapp aktiv-filter" data-filter="alla">Alla</button>
+                <button class="filter-knapp" data-filter="herr">Herr</button>
+                <button class="filter-knapp" data-filter="dam">Dam</button>
+                <button class="filter-knapp" data-filter="lader">Läder</button>
+                <button class="filter-knapp" data-filter="goretex">Gore-Tex</button>
+                <button class="filter-knapp" data-filter="ull">Ull</button>
+                <button class="filter-knapp" data-filter="barn">Barn</button>
+            </div>
+            <!-- Visar hur många produkter som matchar filtret – uppdateras av JS -->
+            <span class="filter-raknare" id="filterRaknare">18 produkter</span>
+        </div>
     </section>
-</header>
 </body>
 </html>
