@@ -156,3 +156,293 @@
     margin-left: auto; /* skjuts till höger */
     white-space: nowrap;
 }
+
+/* ================================================
+   PRODUKT-KATEGORI-SEKTION – gemensamt för alla fyra
+   ================================================ */
+
+.produkt-kategori-sektion {
+    padding: 70px 30px;
+    background-color: white;
+}
+
+/* Varannan sektion grå bakgrund */
+.sektion-grå {
+    background-color: var(--ljus);
+}
+
+/* Header-delen med bild och text bredvid varandra */
+.kategori-header {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto 55px;
+}
+
+/* Spegelvänder ordningen: bild till höger, text till vänster */
+.kategori-header-speglad {
+    flex-direction: row-reverse;
+}
+
+.kategori-header-text {
+    flex: 1;
+    max-width: 480px;
+}
+
+.kategori-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--morkt);
+    margin: 0 0 15px 0;
+}
+
+.kategori-beskrivning {
+    font-size: 0.98rem;
+    color: #777;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.kategori-header-bild-wrapper {
+    flex: 1;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.kategori-header-bild {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.kategori-header-bild-wrapper:hover .kategori-header-bild {
+    transform: scale(1.04); /* subtil zoom vid hover */
+}
+
+/* ================================================
+   VANTE-GRID – fem kolumner (mer än startsidan)
+   ================================================ */
+
+.vante-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ================================================
+   VANTE-KORT – mer detaljerade än startsidans produktkort
+   ================================================ */
+
+.vante-kort {
+    background-color: var(--ljus);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Vita kort i grå sektioner och tvärtom */
+.sektion-grå .vante-kort {
+    background-color: white;
+}
+
+.vante-kort:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Dold av JS när filtret inte matchar */
+.vante-kort.dold {
+    display: none;
+}
+
+/* CSS-animation när korten visas efter filtrering – MVG-krav */
+@keyframes dykUpp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vante-kort.synlig {
+    animation: dykUpp 0.3s ease forwards;
+}
+
+/* Bilden + overlay-wrapper */
+.vante-bild-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 240px;
+}
+
+.vante-bild {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.vante-kort:hover .vante-bild {
+    transform: scale(1.06);
+}
+
+/* Mörk overlay med "Snabbvy"-knapp som tonas in vid hover */
+.vante-hover-overlay {
+    position: absolute;
+    inset: 0; /* täcker hela bilden */
+    background-color: rgba(26, 26, 46, 0);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.vante-kort:hover .vante-hover-overlay {
+    background-color: rgba(26, 26, 46, 0.4); /* mörk overlay vid hover */
+}
+
+/* "Snabbvy"-knappen inuti overlay */
+.vante-snabbvy-knapp {
+    background-color: white;
+    color: var(--morkt);
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    min-height: 44px; /* touch-vänlig – MVG-krav */
+    display: flex;
+    align-items: center;
+}
+
+.vante-kort:hover .vante-snabbvy-knapp {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Etiketter på korten */
+.vante-etikett {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--morkt);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 2px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    z-index: 2; /* ovanpå hover-overlayet */
+}
+
+.etikett-bast {
+    background-color: var(--guld);
+    color: var(--morkt);
+}
+
+.etikett-nyhet {
+    background-color: var(--morkt);
+}
+
+.etikett-barn {
+    background-color: #4a90a4;
+}
+
+/* Info-delen nedanför bilden */
+.vante-info {
+    padding: 16px;
+}
+
+.vante-info-topp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.vante-namn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--morkt);
+}
+
+/* Liten badge som visar Herr/Dam/Unisex */
+.vante-kon-ikon {
+    font-size: 0.65rem;
+    font-weight: 500;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background-color: rgba(26, 26, 46, 0.08);
+    color: var(--morkt);
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.vante-kon-unisex {
+    background-color: rgba(200, 169, 110, 0.15);
+    color: #9a7840;
+}
+
+.vante-material {
+    font-size: 0.78rem;
+    color: #999;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.5px;
+}
+
+/* Rad med pris och köp-knapp */
+.vante-nedre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vante-pris {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--morkt);
+    margin: 0;
+}
+
+.vante-knapp {
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--morkt);
+    border-bottom: 1px solid var(--morkt);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.vante-knapp:hover {
+    color: var(--guld);
+    border-color: var(--guld);
+}
