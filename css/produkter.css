@@ -446,3 +446,78 @@
     color: var(--guld);
     border-color: var(--guld);
 }
+
+
+/* ================================================
+   JÄMFÖRELSETABELL – G-krav
+   ================================================ */
+
+.tabell-sektion {
+    padding: 70px 30px;
+}
+
+.tabell-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Scrollbar på mobil om tabellen är för bred */
+.tabell-wrapper {
+    overflow-x: auto;
+}
+
+.jamfor-tabell {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    margin-top: 40px;
+}
+
+/* Rubrikraden i thead */
+.jamfor-tabell thead tr {
+    background-color: var(--morkt); /* mörk bakgrund på rubrikraden – G-krav */
+    color: white;
+}
+
+.jamfor-tabell th {
+    padding: 16px 20px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+}
+
+/* Vanliga dataceller */
+.jamfor-tabell td {
+    padding: 15px 20px;
+    vertical-align: middle;
+}
+
+/* Varannan rad ljus/lite mörkare – G-krav: olika radfärger */
+.tabell-rad-1 {
+    background-color: white;
+}
+
+.tabell-rad-2 {
+    background-color: rgba(26, 26, 46, 0.03); /* väldigt ljus blå-grå nyans */
+}
+
+/* Hover på raderna */
+.jamfor-tabell tbody tr:hover {
+    background-color: rgba(200, 169, 110, 0.08); /* ljus guld-ton vid hover */
+}
+
+/* Fotnoten i tfoot – annorlunda styling – G-krav */
+.jamfor-tabell tfoot tr {
+    background-color: rgba(26, 26, 46, 0.07);
+    border-top: 2px solid var(--morkt);
+}
+
+.jamfor-tabell tfoot td {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    padding: 12px 20px;
+}
