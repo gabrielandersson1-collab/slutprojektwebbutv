@@ -302,34 +302,13 @@ body {
     display: inline-block; /* viktigt för att margin ska funka snyggt */
 }
 
-/* Gemensam wrapper för alla fyra produktsektioner */
-.produkt-sektion {
+.erbjuder-sektion {
     padding: 70px 30px;
-}
-
-/* Varannan sektion har vit bakgrund för att byta av mot den grå sidan */
-.lader-sektion {
-    background-color: white;
-}
-
-.goretex-sektion {
-    background-color: var(--ljus);
-}
-
-.ull-sektion {
-    background-color: white;
-}
-
-/* Intro-texten ovanför produkterna */
-.sektion-intro {
     text-align: center;
-    margin-bottom: 50px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: white;
 }
 
-.sektion-rubrik {
+.erbjuder-rubrik {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.4rem;
     font-weight: 400;
@@ -337,351 +316,46 @@ body {
     margin: 0 0 15px 0;
 }
 
-.sektion-beskrivning {
+.erbjuder-text {
     font-size: 0.98rem;
     color: rgb(119, 119, 119);
     line-height: 1.75;
-    margin: 0;
+    margin: 0 0 50px 0;
 }
 
-/* Layout med stor sidebild + produktgrid bredvid varandra */
-.produkt-layout {
-    display: flex;
-    gap: 30px;
-    max-width: 1300px;
-    margin: 0 auto 50px;
-    align-items: stretch;
-}
-
-/* Läder: bild till vänster, kort till höger */
-.lader-layout {
-    flex-direction: row;
-}
-
-/* Gore-Tex: kort till vänster, bild till höger */
-.goretex-layout {
-    flex-direction: row-reverse;
-}
-
-/* Den stora bilden tar upp lika mycket som produktgridet */
-.kollektion-bild-wrapper {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
-    min-height: 500px;
-}
-
-.kollektion-bild {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-}
-
-.kollektion-bild-wrapper:hover .kollektion-bild {
-    transform: scale(1.04); /* subtil zoom vid hover */
-}
-
-/* Etikett i hörnet på den stora bilden */
-.bild-etikett {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: var(--morkt);
-    color: white;
-    padding: 10px 20px;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: 'Jost', sans-serif;
-    font-weight: 500;
-}
-
-/* Ljus variant för bilder med mörk bakgrund */
-.bild-etikett-ljus {
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* 2x2 grid för fyra produktkort bredvid den stora bilden */
-.produkt-grid-liten {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-}
-
-/* ================================================
-   PRODUKTKORT – gemensam stil
-   ================================================ */
-
-.produkt-kort {
-    background-color: var(--ljus);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.lader-sektion .produkt-kort {
-    background-color: var(--ljus); /* grå kort mot vit sektion */
-}
-
-.goretex-sektion .produkt-kort {
-    background-color: white; /* vita kort mot grå sektion */
-}
-
-.ull-sektion .produkt-kort {
-    background-color: var(--ljus);
-}
-
-.produkt-kort:hover {
-    transform: translateY(-6px); /* kortet lyfter sig vid hover */
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
-}
-
-.produkt-bild-wrapper {
-    position: relative;
-    overflow: hidden;
-    height: 200px;
-}
-
-.produkt-bild {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.produkt-kort:hover .produkt-bild {
-    transform: scale(1.06); /* zoom-effekt vid hover */
-}
-
-/* Etiketter på produktkort – t.ex. "Nyhet", "Bästsäljare" */
-.produkt-etikett {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: var(--morkt);
-    color: white;
-    font-size: 0.65rem;
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 2px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-family: 'Jost', sans-serif;
-}
-
-.etikett-bestsaljare {
-    background-color: var(--guld);
-    color: var(--morkt);
-}
-
-.etikett-barn {
-    background-color: #4a90a4; /* blågrön för barn */
-}
-
-.etikett-nyhet {
-    background-color: var(--morkt);
-}
-
-.produkt-info {
-    padding: 16px;
-}
-
-.produkt-namn {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin: 0 0 4px 0;
-    color: var(--morkt);
-}
-
-.produkt-material {
-    font-size: 0.78rem;
-    color: #999;
-    margin: 0 0 8px 0;
-    letter-spacing: 0.5px;
-}
-
-.produkt-pris {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--morkt);
-    margin: 0 0 12px 0;
-}
-
-/* "Se mer"-länken på produktkorten */
-.produkt-knapp {
-    text-decoration: none;
-    color: var(--morkt);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--morkt);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Jost', sans-serif;
-}
-
-.produkt-knapp:hover {
-    color: var(--guld);
-    border-color: var(--guld);
-}
-
-/* Knappen "Se alla" centrerad under varje sektion */
-.se-alla-wrapper {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* ================================================
-   ULLVANTAR – brett grid med sex produkter
-   ================================================ */
-
-.produkt-grid-bred {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* sex kolumner på desktop */
-    gap: 18px;
-    max-width: 1300px;
-    margin: 0 auto 50px;
-}
-
-/* Bilderna lite kortare i det breda gridet */
-.produkt-grid-bred .produkt-bild-wrapper {
-    height: 220px;
-}
-
-/* ================================================
-   BARN & JUNIOR – banner + fyra kort
-   ================================================ */
-
-.barn-sektion {
-    padding: 0 0 70px 0; /* ingen padding ovanför – bannern går ända ut */
-    background-color: var(--ljus);
-}
-
-/* Bakgrundsbild-banner – MVG-krav: minst ett element med bakgrundsbild */
-.barn-banner {
-    background-image: url('');
-    background-size: cover;
-    background-position: center 30%;
-    height: 380px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-.barn-banner-overlay {
-    background-color: rgba(26, 26, 46, 0.72);
-    padding: 50px 60px;
-    max-width: 650px;
-    margin-left: 80px;
-}
-
-.barn-rubrik {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.6rem;
-    font-weight: 400;
-    color: white;
-    margin: 0 0 15px 0;
-}
-
-.barn-undertext {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.97rem;
-    line-height: 1.75;
-    margin: 0;
-}
-
-/* Fyra kort i ett grid under bannern */
-.barn-grid {
+.erbjuder-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
     max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 30px;
+    margin: 0 auto 40px;
 }
 
-.barn-grid .produkt-kort {
-    background-color: white;
-}
-
-/* ================================================
-   KVALITETS-SEKTION MED BAKGRUNDSBILD – MVG-krav
-   ================================================ */
-
-.kvalitet-sektion {
-    /* Bakgrundsbild – MVG-krav: minst ett element ska ha bakgrundsbild */
-    background-image: url("");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* parallax-effekt vid scrollning */
-    padding: 110px 30px;
-    text-align: center;
-}
-
-.kvalitet-overlay {
-    background-color: rgba(26, 26, 46, 0.78);
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 65px 55px;
+.erbjuder-kort {
+    background-color: var(--ljus);
+    padding: 35px 20px;
     border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.kvalitet-rubrik {
+.erbjuder-kort:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.erbjuder-kort h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    color: white;
+    font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    margin-top: 0;
+    color: var(--morkt);
+    margin: 0 0 12px 0;
 }
 
-.kvalitet-text {
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-/* Lista med fördelar */
-.kvalitet-lista {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 40px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 35px;
-}
-
-.kvalitet-lista li {
-    color: var(--guld);
-    font-size: 0.88rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding-left: 18px;
-    position: relative;
-    font-family: 'Jost', sans-serif;
-}
-
-/* Streck framför varje punkt */
-.kvalitet-lista li::before {
-    content: '—';
-    position: absolute;
-    left: -2px;
-    color: var(--guld);
+.erbjuder-kort p {
+    font-size: 0.9rem;
+    color: rgb(119, 119, 119);
+    line-height: 1.7;
+    margin: 0;
 }
 
 
@@ -782,15 +456,6 @@ footer {
    RESPONSIV DESIGN – media queries 
    ================================================ */
 
-/* Tablet (1100px och smalare) */
-@media (max-width: 1100px) {
-
-    /* Ullvantar: tre kolumner på tablet */
-    .produkt-grid-bred {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 /* Tablet (900px och smalare) */
 @media (max-width: 900px) {
 
@@ -808,38 +473,7 @@ footer {
         display: flex;
     }
 
-    /* Layouten med stor bild + kort staplas vertikalt */
-    .produkt-layout {
-        flex-direction: column;
-    }
-
-    /* Den stora bilden är inte lika hög på tablet */
-    .kollektion-bild-wrapper {
-        min-height: 300px;
-        height: 300px;
-    }
-
-    /* Fortfarande 2x2 grid för korten */
-    .produkt-grid-liten {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Ullvantar: två kolumner på mindre tablet */
-    .produkt-grid-bred {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Barn-grid: två kolumner */
-    .barn-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Barn-banner overlay justeras */
-    .barn-banner-overlay {
-        margin-left: 30px;
-        padding: 35px 30px;
-    }
-
+    /* Om-oss staplas vertikalt */
     .om-oss-innehall {
         flex-direction: column;
         gap: 30px;
@@ -856,14 +490,14 @@ footer {
         top: 22%;
     }
 
-    .hero-undertext {
-        left: 40%;
-        top: 34%;
-    }
-
     .hero-content {
         left: 40%;
         gap: 20px;
+    }
+
+    /* Erbjuder: två kolumner på tablet */
+    .erbjuder-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -886,16 +520,6 @@ footer {
         top: 22%;
     }
 
-    .hero-undertext {
-        font-size: 0.75rem;
-        left: 50%;
-        top: 34%;
-        width: 80%;
-        text-align: center;
-        transform: translate(-50%, -50%);
-        letter-spacing: 2px;
-    }
-
     .hero-content {
         left: 50%;
         gap: 12px;
@@ -914,55 +538,35 @@ footer {
         bottom: 12px;
     }
 
-    /* En kolumn på mobil för nästan alla grid */
-    .produkt-grid-liten {
-        grid-template-columns: 1fr;
-    }
-
-    .produkt-grid-bred {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .barn-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .produkt-sektion {
-        padding: 40px 15px;
-    }
-
-    .barn-sektion {
-        padding: 0 0 40px 0;
-    }
-
-    .barn-banner {
-        height: 280px;
-    }
-
-    .barn-banner-overlay {
-        margin-left: 15px;
-        margin-right: 15px;
-        padding: 25px 20px;
-    }
-
-    .barn-rubrik {
-        font-size: 1.8rem;
-    }
-
-    .barn-grid {
-        padding: 0 15px;
-    }
-
-    .kvalitet-overlay {
-        padding: 35px 20px;
-    }
-
+    /* Om-oss */
     .om-oss-sektion {
         padding: 40px 15px;
     }
 
+    .om-oss-foto {
+        height: 220px;
+    }
+
+    .om-oss-rubrik {
+        font-size: 1.8rem;
+    }
+
+    /* Erbjuder: en kolumn på mobil */
+    .erbjuder-sektion {
+        padding: 40px 15px;
+    }
+
+    .erbjuder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .erbjuder-rubrik {
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
     .footer-innehall {
         flex-direction: column;
         gap: 30px;
     }
-}   
+}

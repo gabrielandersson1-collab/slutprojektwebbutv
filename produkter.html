@@ -61,25 +61,71 @@
             <a href="#herr"    class="snabb-nav-lank">Herr</a>
             <a href="#dam"     class="snabb-nav-lank">Dam</a>
         </div>
-    </section> <!-- ============================================================
-         FILTER-BAR – JavaScript filtrerar korten när man klickar
+    </section>
+    <!-- ============================================================
+         JÄMFÖRELSETABELL – G-nivå krav: tabell med thead/tbody/tfoot,
+         minst 4 rader, 2-3 kolumner, olika radfärger, sista rad annorlunda
          ============================================================ -->
-    <section class="filter-sektion">
-        <div class="filter-wrapper">
-            <span class="filter-etikett">Filtrera:</span>
-            <div class="filter-knappar">
-                <button class="filter-knapp aktiv-filter" data-filter="alla">Alla</button>
-                <button class="filter-knapp" data-filter="herr">Herr</button>
-                <button class="filter-knapp" data-filter="dam">Dam</button>
-                <button class="filter-knapp" data-filter="lader">Läder</button>
-                <button class="filter-knapp" data-filter="goretex">Gore-Tex</button>
-                <button class="filter-knapp" data-filter="ull">Ull</button>
-                <button class="filter-knapp" data-filter="barn">Barn</button>
+    <section class="tabell-sektion sektion-grå">
+        <div class="tabell-wrapper">
+            <div class="sektion-intro">
+                <span class="overrubrik">Välj rätt vante</span>
+                <h2 class="sektion-rubrik">Jämför våra material</h2>
+                <p class="sektion-beskrivning">Osäker på vilket material som passar dig? Här är en snabb översikt.</p>
             </div>
-            <!-- Visar hur många produkter som matchar filtret – uppdateras av JS -->
-            <span class="filter-raknare" id="filterRaknare">18 produkter</span>
+
+            <!-- Tabell med alla obligatoriska taggar: table, thead, tbody, tfoot, th, tr, td – G-krav -->
+            <table class="jamfor-tabell">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Vattentäthet</th>
+                        <th>Värme</th>
+                        <th>Passar bäst för</th>
+                        <th>Prisintervall</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tabell-rad-1">
+                        <td>Läder</td>
+                        <td>Låg–Medel</td>
+                        <td>★★★★☆</td>
+                        <td>Stad, kontor, vardag</td>
+                        <td>999 – 1 349 kr</td>
+                    </tr>
+                    <tr class="tabell-rad-2">
+                        <td>Gore-Tex</td>
+                        <td>Mycket hög</td>
+                        <td>★★★★★</td>
+                        <td>Ski, vandring, extremväder</td>
+                        <td>899 – 1 599 kr</td>
+                    </tr>
+                    <tr class="tabell-rad-1">
+                        <td>Ull / Merino</td>
+                        <td>Låg</td>
+                        <td>★★★★☆</td>
+                        <td>Vardag, promenader, inomhus</td>
+                        <td>449 – 569 kr</td>
+                    </tr>
+                    <tr class="tabell-rad-2">
+                        <td>Fleece / Polyester (kommer snart) </td>
+                        <td>Medel</td>
+                        <td>★★★☆☆</td>
+                        <td>Sport, lek, vardagsanvändning</td>
+                        <td>299 – 549 kr</td>
+                    </tr>
+                </tbody>
+                <!-- Sista raden med annorlunda styling – G-krav -->
+                <tfoot>
+                    <tr>
+                        <td colspan="5">* Alla Nordic Gloves-produkter är testade i nordiska klimatförhållanden och uppfyller våra kvalitetsstandarder.</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </section>
+
+    
 
     <!-- ============================================================
          SEKTION: LÄDER – id="lader" används för ankarlänkar
@@ -425,69 +471,151 @@
 
         </div>
     </section>
+    
 
-     <!-- ============================================================
-         JÄMFÖRELSETABELL – G-nivå krav: tabell med thead/tbody/tfoot,
-         minst 4 rader, 2-3 kolumner, olika radfärger, sista rad annorlunda
+
+<!-- ============================================================
+         SEKTION: BARN & JUNIOR
          ============================================================ -->
-    <section class="tabell-sektion sektion-grå">
-        <div class="tabell-wrapper">
-            <div class="sektion-intro">
-                <span class="overrubrik">Välj rätt vante</span>
-                <h2 class="sektion-rubrik">Jämför våra material</h2>
-                <p class="sektion-beskrivning">Osäker på vilket material som passar dig? Här är en snabb översikt.</p>
+    <section class="produkt-kategori-sektion" id="barn">
+        <div class="kategori-header kategori-header-speglad">
+            <div class="kategori-header-text">
+                <span class="overrubrik">Kollektion</span>
+                <h2 class="kategori-rubrik">Barn &amp; Junior</h2>
+                <p class="kategori-beskrivning">Små händer behöver extra omsorg. Våra barnvantar är vattenavvisande, slitstarka och roliga – klara för snöbollskrig, skolan och alla äventyr däremellan.</p>
             </div>
+            <div class="kategori-header-bild-wrapper">
+                <img
+                    src=""
+                    alt="Barn som leker i snön med Nordic Gloves barnvantar"
+                    loading="lazy"
+                    class="kategori-header-bild"
+                >
+            </div>
+        </div>
 
-            <!-- Tabell med alla obligatoriska taggar: table, thead, tbody, tfoot, th, tr, td – G-krav -->
-            <table class="jamfor-tabell">
-                <thead>
-                    <tr>
-                        <th>Material</th>
-                        <th>Vattentäthet</th>
-                        <th>Värme</th>
-                        <th>Passar bäst för</th>
-                        <th>Prisintervall</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tabell-rad-1">
-                        <td>Läder</td>
-                        <td>Låg–Medel</td>
-                        <td>★★★★☆</td>
-                        <td>Stad, kontor, vardag</td>
-                        <td>999 – 1 349 kr</td>
-                    </tr>
-                    <tr class="tabell-rad-2">
-                        <td>Gore-Tex</td>
-                        <td>Mycket hög</td>
-                        <td>★★★★★</td>
-                        <td>Ski, vandring, extremväder</td>
-                        <td>899 – 1 599 kr</td>
-                    </tr>
-                    <tr class="tabell-rad-1">
-                        <td>Ull / Merino</td>
-                        <td>Låg</td>
-                        <td>★★★★☆</td>
-                        <td>Vardag, promenader, inomhus</td>
-                        <td>449 – 569 kr</td>
-                    </tr>
-                    <tr class="tabell-rad-2">
-                        <td>Fleece / Polyester (kommer snart) </td>
-                        <td>Medel</td>
-                        <td>★★★☆☆</td>
-                        <td>Sport, lek, vardagsanvändning</td>
-                        <td>299 – 549 kr</td>
-                    </tr>
-                </tbody>
-                <!-- Sista raden med annorlunda styling – G-krav -->
-                <tfoot>
-                    <tr>
-                        <td colspan="5">* Alla Nordic Gloves-produkter är testade i nordiska klimatförhållanden och uppfyller våra kvalitetsstandarder.</td>
-                    </tr>
-                </tfoot>
-            </table>
+        <div class="vante-grid">
+
+            <article class="vante-kort" data-kategori="barn">
+                <div class="vante-bild-wrapper">
+                    <img src=""
+                         alt="Snöboll Mini – röd och vit vattentät barnvante för lek i snön, storlek 2–8 år"
+                         loading="lazy" class="vante-bild">
+                    <span class="vante-etikett etikett-barn">Barn 2–8 år</span>
+                    <div class="vante-hover-overlay">
+                        <a href="#" class="vante-snabbvy-knapp">Snabbvy</a>
+                    </div>
+                </div>
+                <div class="vante-info">
+                    <div class="vante-info-topp">
+                        <h3 class="vante-namn">Snöboll Mini</h3>
+                    </div>
+                    <p class="vante-material">Polyester · Vattentät</p>
+                    <div class="vante-nedre">
+                        <p class="vante-pris">299 kr</p>
+                        <a href="#" class="vante-knapp">Köp</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="vante-kort" data-kategori="barn">
+                <div class="vante-bild-wrapper">
+                    <img src=""
+                         alt="Fjällunge – blå junior-vante med fleece-foder för barn 6–12 år"
+                         loading="lazy" class="vante-bild">
+                    <span class="vante-etikett etikett-bast">Populär</span>
+                    <div class="vante-hover-overlay">
+                        <a href="#" class="vante-snabbvy-knapp">Snabbvy</a>
+                    </div>
+                </div>
+                <div class="vante-info">
+                    <div class="vante-info-topp">
+                        <h3 class="vante-namn">Fjällunge</h3>
+                    </div>
+                    <p class="vante-material">Fleece · Vattenavvisande</p>
+                    <div class="vante-nedre">
+                        <p class="vante-pris">349 kr</p>
+                        <a href="#" class="vante-knapp">Köp</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="vante-kort" data-kategori="barn">
+                <div class="vante-bild-wrapper">
+                    <img src=""
+                         alt="Junior GTX – teknisk Gore-Tex junior-handske för åldrar 10–16 år"
+                         loading="lazy" class="vante-bild">
+                    <span class="vante-etikett etikett-nyhet">Nyhet</span>
+                    <div class="vante-hover-overlay">
+                        <a href="#" class="vante-snabbvy-knapp">Snabbvy</a>
+                    </div>
+                </div>
+                <div class="vante-info">
+                    <div class="vante-info-topp">
+                        <h3 class="vante-namn">Junior GTX</h3>
+                    </div>
+                    <p class="vante-material">Gore-Tex · Junior 10–16 år</p>
+                    <div class="vante-nedre">
+                        <p class="vante-pris">549 kr</p>
+                        <a href="#" class="vante-knapp">Köp</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="vante-kort" data-kategori="barn">
+                <div class="vante-bild-wrapper">
+                    <img src=""
+                         alt="Stormy – röd ullvante för barn i åldrarna 4–10 år med extra lång manschett"
+                         loading="lazy" class="vante-bild">
+                    <div class="vante-hover-overlay">
+                        <a href="#" class="vante-snabbvy-knapp">Snabbvy</a>
+                    </div>
+                </div>
+                <div class="vante-info">
+                    <div class="vante-info-topp">
+                        <h3 class="vante-namn">Stormy</h3>
+                    </div>
+                    <p class="vante-material">Merino · Barn 4–10 år</p>
+                    <div class="vante-nedre">
+                        <p class="vante-pris">379 kr</p>
+                        <a href="#" class="vante-knapp">Köp</a>
+                    </div>
+                </div>
+            </article>
+
         </div>
     </section>
+    </main>
+    <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+    <div class="footer-innehall">
+        <div class="footer-kolumn">
+            <h3 class="footer-rubrik">Nordic Gloves</h3>
+            <p class="footer-text">Varma vantar för nordiskt klimat sedan 2010.</p>
+        </div>
+        <div class="footer-kolumn">
+            <h3 class="footer-rubrik">Sociala Länkar</h3>
+            <ul class="footer-lista">
+                <li><a href="#" class="footer-lank">Instagram</a></li>
+                <li><a href="#" class="footer-lank">Facebook</a></li>
+                <li><a href="#" class="footer-lank">Pinterest</a></li>
+            </ul>
+        </div>
+        <div class="footer-kolumn">
+            <h3 class="footer-rubrik">Kontaktinfo</h3>
+            <ul class="footer-lista">
+                <li class="footer-text">info@nordicgloves.se</li>
+                <li class="footer-text">+46 8 123 456 78</li>
+                <li class="footer-text">Stockholm, Sverige</li>
+            </ul>
+        </div>
+    </div>
+    <p class="copyright">© 2025 Nordic Gloves. Alla rättigheter förbehållna.</p>
+</footer>
+
+
 
 </body>
 </html>

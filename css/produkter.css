@@ -83,79 +83,80 @@
 }
 
 /* ================================================
-   FILTER-BAR
+   JÄMFÖRELSETABELL – G-krav
    ================================================ */
 
-.filter-sektion {
-    background-color: white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 16px 30px;
-    position: sticky; /* följer med när man scrollar – praktiskt */
-    top: 0;
-    z-index: 100;
+.tabell-sektion {
+    padding: 70px 30px;
 }
 
-.filter-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1300px;
+.tabell-wrapper {
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.filter-etikett {
-    font-size: 0.78rem;
+/* Scrollbar på mobil om tabellen är för bred */
+.tabell-wrapper {
+    overflow-x: auto;
+}
+
+.jamfor-tabell {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    margin-top: 40px;
+}
+
+/* Rubrikraden i thead */
+.jamfor-tabell thead tr {
+    background-color: var(--morkt); /* mörk bakgrund på rubrikraden – G-krav */
+    color: white;
+}
+
+.jamfor-tabell th {
+    padding: 16px 20px;
+    text-align: left;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 0.82rem;
     text-transform: uppercase;
-    color: #999;
-    font-family: 'Jost', sans-serif;
-    white-space: nowrap;
 }
 
-.filter-knappar {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+/* Vanliga dataceller */
+.jamfor-tabell td {
+    padding: 15px 20px;
+    vertical-align: middle;
 }
 
-/* Varje filter-knapp */
-.filter-knapp {
-    background: none;
-    border: 1px solid rgba(0, 0, 0, 0.18);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 400;
-    color: var(--text);
-    padding: 8px 18px;
-    cursor: pointer;
-    border-radius: 30px; /* pill-form */
-    transition: all 0.2s ease;
-    min-height: 44px; /* touch-vänlig – MVG-krav */
+/* Varannan rad ljus/lite mörkare – G-krav: olika radfärger */
+.tabell-rad-1 {
+    background-color: white;
 }
 
-.filter-knapp:hover {
-    background-color: var(--morkt);
-    color: white;
-    border-color: var(--morkt);
+.tabell-rad-2 {
+    background-color: rgba(26, 26, 46, 0.03); /* väldigt ljus blå-grå nyans */
 }
 
-/* Aktiv filter – fylld mörk knapp */
-.aktiv-filter {
-    background-color: var(--morkt);
-    color: white;
-    border-color: var(--morkt);
+/* Hover på raderna */
+.jamfor-tabell tbody tr:hover {
+    background-color: rgba(200, 169, 110, 0.08); /* ljus guld-ton vid hover */
 }
 
-/* Räknaren som visar antal produkter */
-.filter-raknare {
-    font-size: 0.82rem;
-    color: #aaa;
-    font-family: 'Jost', sans-serif;
-    margin-left: auto; /* skjuts till höger */
-    white-space: nowrap;
+/* Fotnoten i tfoot – annorlunda styling – G-krav */
+.jamfor-tabell tfoot tr {
+    background-color: rgba(26, 26, 46, 0.07);
+    border-top: 2px solid var(--morkt);
 }
+
+.jamfor-tabell tfoot td {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    padding: 12px 20px;
+}
+
+
 
 /* ================================================
    PRODUKT-KATEGORI-SEKTION – gemensamt för alla fyra
@@ -448,76 +449,3 @@
 }
 
 
-/* ================================================
-   JÄMFÖRELSETABELL – G-krav
-   ================================================ */
-
-.tabell-sektion {
-    padding: 70px 30px;
-}
-
-.tabell-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Scrollbar på mobil om tabellen är för bred */
-.tabell-wrapper {
-    overflow-x: auto;
-}
-
-.jamfor-tabell {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.95rem;
-    margin-top: 40px;
-}
-
-/* Rubrikraden i thead */
-.jamfor-tabell thead tr {
-    background-color: var(--morkt); /* mörk bakgrund på rubrikraden – G-krav */
-    color: white;
-}
-
-.jamfor-tabell th {
-    padding: 16px 20px;
-    text-align: left;
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-}
-
-/* Vanliga dataceller */
-.jamfor-tabell td {
-    padding: 15px 20px;
-    vertical-align: middle;
-}
-
-/* Varannan rad ljus/lite mörkare – G-krav: olika radfärger */
-.tabell-rad-1 {
-    background-color: white;
-}
-
-.tabell-rad-2 {
-    background-color: rgba(26, 26, 46, 0.03); /* väldigt ljus blå-grå nyans */
-}
-
-/* Hover på raderna */
-.jamfor-tabell tbody tr:hover {
-    background-color: rgba(200, 169, 110, 0.08); /* ljus guld-ton vid hover */
-}
-
-/* Fotnoten i tfoot – annorlunda styling – G-krav */
-.jamfor-tabell tfoot tr {
-    background-color: rgba(26, 26, 46, 0.07);
-    border-top: 2px solid var(--morkt);
-}
-
-.jamfor-tabell tfoot td {
-    font-size: 0.8rem;
-    color: #888;
-    font-style: italic;
-    padding: 12px 20px;
-}
