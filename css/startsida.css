@@ -360,6 +360,77 @@ body {
 
 
 /* ================================================
+   KVALITETS-SEKTION MED BAKGRUNDSBILD – MVG-krav
+   ================================================ */
+
+.kvalitet-sektion {
+    /* Bakgrundsbild – */
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* parallax-effekt vid scrollning */
+    padding: 110px 30px;
+    text-align: center;
+}
+
+.kvalitet-overlay {
+    background-color: rgba(15, 15, 69, 0.78);
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 65px 55px;
+    border-radius: 4px;
+}
+
+.kvalitet-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+.kvalitet-text {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Lista med fördelar */
+.kvalitet-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 35px;
+}
+
+.kvalitet-lista li {
+    color: var(--guld);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-left: 18px;
+    position: relative;
+    font-family: 'Jost', sans-serif;
+}
+
+/* Streck framför varje punkt */
+.kvalitet-lista li::before {
+    content: '—';
+    position: absolute;
+    left: -2px;
+    color: var(--guld);
+}
+
+
+
+/* ================================================
    FOOTER
    ================================================ */
 

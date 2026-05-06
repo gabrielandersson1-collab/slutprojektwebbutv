@@ -448,4 +448,107 @@
     border-color: var(--guld);
 }
 
+/* ================================================
+   RESPONSIV DESIGN – media queries
+   ================================================ */
+
+/* Tablet (1000px och smalare) */
+@media (max-width: 1000px) {
+
+    .vante-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kategori-header,
+    .kategori-header-speglad {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .kategori-header-bild-wrapper {
+        width: 100%;
+        flex: none;
+        height: 220px;
+    }
+
+    .kategori-header-text {
+        max-width: 100%;
+    }
+
+    .sida-hero-overlay {
+        margin-left: 30px;
+        padding: 30px;
+    }
+
+    .kon-banner-overlay {
+        margin-left: 30px;
+        padding: 30px;
+    }
+}
+
+/* Mobil (600px och smalare) */
+@media (max-width: 600px) {
+
+    .sida-hero {
+        height: 220px;
+    }
+
+    .sida-hero-overlay {
+        margin-left: 15px;
+        padding: 20px;
+    }
+
+    .sida-hero-rubrik {
+        font-size: 2rem;
+    }
+
+    .snabb-nav-lank {
+        padding: 12px 14px;
+        font-size: 0.72rem;
+    }
+
+    .filter-sektion {
+        padding: 12px 15px;
+    }
+
+    /* En kolumn på mobil */
+    .vante-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produkt-kategori-sektion {
+        padding: 40px 15px;
+    }
+
+    .kon-sektion {
+        padding: 0 15px 40px;
+    }
+
+    .kon-banner {
+        margin: 0 -15px 35px;
+        height: 220px;
+    }
+
+    .kon-banner-overlay {
+        margin-left: 15px;
+        padding: 20px;
+    }
+
+    .kon-rubrik {
+        font-size: 2rem;
+    }
+
+    .modal-innehall {
+        flex-direction: column;
+    }
+
+    .modal-bild {
+        width: 100%;
+        height: 180px;
+    }
+
+    .tabell-sektion {
+        padding: 40px 15px;
+    }
+}
 

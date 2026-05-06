@@ -90,4 +90,4 @@ setInterval(() => {
         });
     }
 
- /* slut på DOMContentLoaded */
+ 
