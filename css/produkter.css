@@ -82,6 +82,7 @@
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+
 /* ================================================
    JÄMFÖRELSETABELL – G-krav
    ================================================ */
@@ -296,46 +297,7 @@
     transform: scale(1.06);
 }
 
-/* Mörk overlay med "Snabbvy"-knapp som tonas in vid hover */
-.vante-hover-overlay {
-    position: absolute;
-    inset: 0; /* täcker hela bilden */
-    background-color: rgba(26, 26, 46, 0);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 20px;
-    transition: background-color 0.3s ease;
-}
 
-.vante-kort:hover .vante-hover-overlay {
-    background-color: rgba(26, 26, 46, 0.4); /* mörk overlay vid hover */
-}
-
-/* "Snabbvy"-knappen inuti overlay */
-.vante-snabbvy-knapp {
-    background-color: white;
-    color: var(--morkt);
-    text-decoration: none;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 10px 24px;
-    border-radius: 2px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    min-height: 44px; /* touch-vänlig – MVG-krav */
-    display: flex;
-    align-items: center;
-}
-
-.vante-kort:hover .vante-snabbvy-knapp {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* Etiketter på korten */
 .vante-etikett {
@@ -364,7 +326,7 @@
 }
 
 .etikett-barn {
-    background-color: #4a90a4;
+    background-color: rgb(74, 144, 164);
 }
 
 /* Info-delen nedanför bilden */
@@ -403,12 +365,12 @@
 
 .vante-kon-unisex {
     background-color: rgba(200, 169, 110, 0.15);
-    color: #9a7840;
+    color: rgb(154, 120, 64);
 }
 
 .vante-material {
     font-size: 0.78rem;
-    color: #999;
+    color: rgb(153, 153, 153);
     margin: 0 0 12px 0;
     letter-spacing: 0.5px;
 }
