@@ -1,0 +1,116 @@
+
+/* den aktiva nav-länken är guldfärgad */
+.nav-aktiv {
+    color: var(--guld) !important;
+    font-weight: 500;
+}
+
+/* ================================================
+   HERO – stor bild längst upp
+   ================================================ */
+
+.kontakt-hero {
+    /* bakgrundsbild på herorn – MVG-krav */
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text-rutan {
+    background-color: rgba(26, 26, 46, 0.72);
+    padding: 45px 55px;
+    max-width: 650px;
+    margin-left: 80px;
+}
+
+.hero-stor-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+.hero-liten-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* ================================================
+   FORMULÄRET
+   ================================================ */
+
+.formularet-wrapper {
+    flex: 1.1; /* lite bredare än kartan */
+}
+
+.formularet-rubrik {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--morkt);
+    margin: 8px 0 10px 0;
+}
+
+.formularet-ingress {
+    font-size: 0.95rem;
+    color: rgb(136, 136, 136);
+    margin: 0 0 35px 0;
+    line-height: 1.65;
+}
+
+/* varje fält-grupp är ett fält + label + feltext */
+.falt-gruppen {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.falt-texten {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--morkt);
+    letter-spacing: 0.5px;
+}
+
+/* den röda stjärnan för obligatoriska fält */
+.maste-fyllas {
+    color: rgb(192, 57, 43);
+    margin-left: 2px;
+}
+
+.valfritt-text {
+    font-weight: 400;
+    color: rgb(187, 187, 187);
+    font-size: 0.78rem;
+}
+
+/* alla input-fält, select och textarea får samma stil */
+.falt-input {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    background-color: var(--ljus);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+    width: 100%;
+    box-sizing: border-box; /* annars kan de bli för breda */
+    min-height: 44px; /* touch-vänlig storlek – MVG-krav */
+}
+
+.falt-input:focus {
+    border-color: var(--morkt); /* mörk ram när man klickar i fältet */
+    background-color: white;
+}
+

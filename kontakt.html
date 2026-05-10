@@ -4,8 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nordic gloves kontaktformulär</title>
+    <link rel="stylesheet" href="css/kontakt.css">
+    <link rel="stylesheet" href="css/startsida.css">
 </head>
 <body>
+    <header>
+    <div class="Rubriker">
+        <h1 class="logo">Nordic Gloves</h1>
+
+        <nav class="nav">
+            <a href="startsida.html">Startsida</a>
+            <a href="produkter.html">Produkter</a>
+            <a href="prislista.html">Prislista</a>
+            <a href="kontakt.html" class="nav-aktiv">Kontakt</a>
+        </nav>
+
+        <button class="hamburgare-knapp" id="hamburgarKnapp" aria-label="Öppna meny" aria-expanded="false">
+            <span class="hamburgare-linje"></span>
+            <span class="hamburgare-linje"></span>
+            <span class="hamburgare-linje"></span>
+        </button>
+    </div>
+
+    <nav class="mobil-meny" id="mobilMeny" aria-hidden="true">
+        <a href="startsida.html" class="mobil-lank">Startsida</a>
+        <a href="produkter.html" class="mobil-lank">Produkter</a>
+        <a href="prislista.html" class="mobil-lank">Prislista</a>
+        <a href="kontakt.html" class="mobil-lank">Kontakt</a>
+    </nav>
+</header>
+
+<main>
+     <section class="kontakt-hero">
+        <div class="hero-text-rutan">
+            <span class="overrubrik overrubrik-ljus">Nordic Gloves</span>
+            <h2 class="hero-stor-rubrik">Kontakta oss</h2>
+            <p class="hero-liten-text">Vi svarar alltid inom 1–2 vardagar. Tveka inte att höra av dig!</p>
+        </div>
+    </section>
+
+    <!-- formuläret  -->
+    <section class="formular-och-karta">
+        <div class="formular-karta-layout">
+            <div class="formularet-wrapper">
+                <span class="overrubrik">Skriv till oss</span>
+                <h2 class="formularet-rubrik">Skicka ett meddelande</h2>
+                <p class="formularet-ingress">Fyll i formuläret nedan så hör vi av oss så fort vi kan.</p>
+
+                <!-- det här är själva formuläret, novalidate för att JS sköter valideringen -->
+                <form id="kontaktFormularet" novalidate>
+
+                    <!-- namnfältet – type text -->
+                    <div class="falt-gruppen">
+                        <label for="namnFaltet" class="falt-texten">
+                            Namn <span class="maste-fyllas">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="namnFaltet"
+                            name="namn"
+                            class="falt-input"
+                            placeholder="Ditt namn"
+                            autocomplete="name"
+                        >
+                        <!-- felmeddelandet visas av js om fältet är tomt -->
+                        <span class="felet" id="namnFelet">Du måste ange ditt namn</span>
+                    </div>
+
+                    <!-- epost-fältet – type email – VG-krav -->
+                    <div class="falt-gruppen">
+                        <label for="epostFaltet" class="falt-texten">
+                            E-postadress <span class="maste-fyllas">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="epostFaltet"
+                            name="epost"
+                            class="falt-input"
+                            placeholder="din@epost.se"
+                            autocomplete="email"
+                        >
+                        <!-- js kollar att eposten har rätt format, t.ex. att det finns ett @-tecken -->
+                        <span class="felet" id="epostFelet">Ange en giltig e-postadress, t.ex. namn@exempel.se</span>
+                    </div>
+
+                    <!-- telefon – type tel, en annan input-typ – VG-krav -->
+                    <div class="falt-gruppen">
+                        <label for="telefonFaltet" class="falt-texten">
+                            Telefon <span class="valfritt-text">(valfritt)</span>
+                        </label>
+                        <input
+                            type="tel"
+                            id="telefonFaltet"
+                            name="telefon"
+                            class="falt-input"
+                            placeholder="+46 70 123 45 67"
+                            autocomplete="tel"
+                        >
+                    </div>
+
+                    <!-- ärendeval  -->
+                    <div class="falt-gruppen">
+                        <label for="arendeFaltet" class="falt-texten">
+                            Ärende <span class="maste-fyllas">*</span>
+                        </label>
+                        <select id="arendeFaltet" name="arende" class="falt-input valj-arende">
+                            <option value=""> Välj ett ärende </option>
+                            <option value="produkt">Fråga om produkt</option>
+                            <option value="order">Order / leverans</option>
+                            <option value="retur">Retur / reklamation</option>
+                            <option value="ovrigt">Övrigt</option>
+                        </select>
+                        <span class="felet" id="arendeFelet">Välj ett ärende i listan.</span>
+                    </div>
+
+                    <!-- meddelandefältet – textarea  -->
+                    <div class="falt-gruppen">
+                        <label for="meddelandeFaltet" class="falt-texten">
+                            Meddelande <span class="maste-fyllas">*</span>
+                        </label>
+                        <textarea
+                            id="meddelandeFaltet"
+                            name="meddelande"
+                            class="falt-input meddelande-rutan"
+                            placeholder="Beskriv ditt ärende här..."
+                            rows="5"
+                        ></textarea>
+                        <span class="felet" id="meddelandeFelet">Skriv ett meddelande (minst 10 tecken).</span>
+                    </div>
+
+                    <!-- gdpr-checkbox – type checkbox, ännu en annan input-typ -->
+                    <div class="falt-gruppen checkbox-raden">
+                        <label class="checkbox-labeln">
+                            <input
+                                type="checkbox"
+                                id="gdprBoxen"
+                                name="gdpr"
+                                class="sjalva-checkboxen"
+                            >
+                            <span class="checkbox-texten">
+                                Jag godkänner att Nordic Gloves sparar mina uppgifter för att kunna svara på min förfrågan.
+                            </span>
+                        </label>
+                        <span class="felet" id="gdprFelet">Du måste godkänna villkoren.</span>
+                    </div>
+
+                    <!-- skicka-knappen -->
+                    <button type="submit" class="skicka-knappen" id="skickaKnappen">
+                        Skicka meddelande
+                    </button>
+                </form>
+
+
+</main>
     
 </body>
 </html>
