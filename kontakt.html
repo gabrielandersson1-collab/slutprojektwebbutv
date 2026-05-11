@@ -15,7 +15,6 @@
         <nav class="nav">
             <a href="startsida.html">Startsida</a>
             <a href="produkter.html">Produkter</a>
-            <a href="prislista.html">Prislista</a>
             <a href="kontakt.html" class="nav-aktiv">Kontakt</a>
         </nav>
 
@@ -154,9 +153,130 @@
                         Skicka meddelande
                     </button>
                 </form>
+        
 
 
+                <!-- ============================================================
+                     BEKRÄFTELSEN
+                     ============================================================ -->
+                <div class="bekraftelse-rutan" id="bekraftelseRutan">
+
+                    <!-- den här animerade checkmarken är gjord med css -->
+                    <div class="check-animationen">
+                        <div class="check-cirkeln"></div>
+                        <span class="check-bocken">✓</span>
+                    </div>
+
+                    <h3 class="bekraftelse-rubriken">Din förfrågan/önskemål bearbetas</h3>
+                    <p class="bekraftelse-texten">
+                        Tack för att du hörde av dig! Vi har tagit emot ditt meddelande
+                        och återkommer inom 1–2 vardagar på den e-postadress du angav.
+                    </p>
+
+                    <!-- knappen tillbaka till startsidan -->
+                    <a href="startsida.html" class="tillbaka-knappen btn btn-mork">
+                        ← Tillbaka till startsidan
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- ============================================================
+                 KARTAN 
+                 ============================================================ -->
+            <div class="karta-kolumnen">
+                <span class="overrubrik">Hitta oss</span>
+                <h2 class="karta-rubriken">Vårt kontor</h2>
+                <p class="karta-texten">
+                    Välkommen att besöka oss på Vantgatan 12 i Stockholm.
+                    Vi finns mitt i city, ett stenkast från T-centralen.
+                </p>
+
+                <!-- openstreetmap-kartan -->
+                <iframe
+                    class="kartan"
+                    src=""
+                    title="Karta som visar Nordic Gloves kontor i Stockholm"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+
+                <a
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="karta-lank-texten"
+                >
+                    Öppna i OpenStreetMap ↗
+                </a>
+
+                <!-- öppettider i en tabell  -->
+                <div class="oppettider-boxen">
+                    <h3 class="oppettider-rubriken">Öppettider</h3>
+
+                    <table class="oppettider-tabellen">
+                        <thead>
+                            <tr>
+                                <th>Dag</th>
+                                <th>Tid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="ljus-rad">
+                                <td>Måndag – Fredag</td>
+                                <td>09:00 – 17:00</td>
+                            </tr>
+                            <tr class="mork-rad">
+                                <td>Lördag</td>
+                                <td>10:00 – 14:00</td>
+                            </tr>
+                            <tr class="ljus-rad">
+                                <td>Söndag</td>
+                                <td>Stängt</td>
+                            </tr>
+                        </tbody>
+                        
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">* Röda dagar har vi stängt.</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </main>
+
+<footer>
+    <div class="footer-innehall">
+        <div class="footer-kolumn">
+            <h3 class="footer-rubrik">Nordic Gloves</h3>
+            <p class="footer-text">Varma vantar för nordiskt klimat sedan 2010.</p>
+        </div>
+        <div class="footer-kolumn">
+            <h3 class="footer-rubrik">Sociala Länkar</h3>
+            <ul class="footer-lista">
+                <li><a href="#" class="footer-lank">Instagram</a></li>
+                <li><a href="#" class="footer-lank">Facebook</a></li>
+                <li><a href="#" class="footer-lank">Pinterest</a></li>
+            </ul>
+        </div>
+        <div class="footer-kolumn">
+            <h3 class="footer-rubrik">Kontaktinfo</h3>
+            <ul class="footer-lista">
+                <li class="footer-text">info@nordicgloves.se</li>
+                <li class="footer-text">+46 8 123 456 78</li>
+                <li class="footer-text">Stockholm, Sverige</li>
+            </ul>
+        </div>
+    </div>
+    <p class="copyright">© 2025 Nordic Gloves. Alla rättigheter förbehållna.</p>
+</footer>
+
+<script src="kontakt.js"></script>
     
 </body>
 </html>

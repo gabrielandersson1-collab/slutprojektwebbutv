@@ -43,6 +43,22 @@
 
 
 /* ================================================
+   FORMULÄR + KARTA BREDVID VARANDRA
+   ================================================ */
+
+.formular-och-karta {
+    padding: 70px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.formular-karta-layout {
+    display: flex;
+    gap: 70px;
+    align-items: flex-start;
+}
+
+/* ================================================
    FORMULÄRET
    ================================================ */
 
@@ -114,3 +130,314 @@
     background-color: white;
 }
 
+
+/* select-pilen ser lite bättre ut */
+.valj-arende {
+    cursor: pointer;
+    appearance: none; /* tar bort default-pilen */
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+/* textarea ska gå att göra större men inte smalare */
+.meddelande-rutan {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* checkbox-raden är lite annorlunda layoutmässigt */
+.checkbox-raden {
+    margin-top: 5px;
+}
+
+.checkbox-labeln {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.sjalva-checkboxen {
+    width: 18px;
+    height: 18px;
+    min-width: 18px; /* hindrar den från att krympa */
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--morkt); /* färgar checkboxen i rätt färg */
+}
+
+.checkbox-texten {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+    font-family: 'Jost', sans-serif;
+}
+
+/* ================================================
+   FELMEDDELANDEN – VG/MVG-krav: hjälpsamma feltexter
+   ================================================ */
+
+/* alla felmeddelanden är dolda från start */
+.felet {
+    display: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    color: #c0392b;
+    padding: 6px 10px;
+    background-color: rgba(192, 57, 43, 0.07);
+    border-left: 3px solid #c0392b;
+    border-radius: 0 3px 3px 0;
+}
+
+/* js lägger till den här klassen när det är fel i fältet */
+.felet.visas {
+    display: block;
+}
+
+/* röd ram på fältet om det är fel */
+.falt-input.har-fel {
+    border-color: #c0392b;
+    background-color: rgba(192, 57, 43, 0.03);
+}
+
+/* grön ram när fältet är korrekt ifyllt */
+.falt-input.ar-ok {
+    border-color: #27ae60;
+}
+
+/* ================================================
+   SKICKA-KNAPPEN
+   ================================================ */
+
+.skicka-knappen {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background-color: var(--morkt);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.15s;
+    margin-top: 10px;
+    min-height: 44px; /* touch-vänlig – MVG-krav */
+    width: 100%;
+}
+
+.skicka-knappen:hover {
+    background-color: var(--guld);
+    color: var(--morkt);
+}
+
+.skicka-knappen:active {
+    transform: scale(0.98);
+}
+
+/* grå och klickbar när js håller på att "skicka" */
+.skicka-knappen.skickar {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* ================================================
+   BEKRÄFTELSE-RUTAN – visas efter skicka
+   Dold från start
+   ================================================ */
+
+.bekraftelse-rutan {
+    display: none; /* js byter till flex när formuläret skickats */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 30px;
+}
+
+/* animerad checkmark-cirkel */
+.check-animationen {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+}
+
+/* den gröna cirkeln runt bocken */
+@keyframes ritaCirkeln {
+    0%   { stroke-dashoffset: 251; }
+    100% { stroke-dashoffset: 0; }
+}
+
+@keyframes poppaIn {
+    0%   { transform: scale(0); opacity: 0; }
+    60%  { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.check-cirkeln {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #27ae60;
+    position: absolute;
+    animation: poppaIn 0.5s ease forwards;
+}
+
+.check-bocken {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+    color: #27ae60;
+    animation: poppaIn 0.5s ease 0.2s both; /* lite fördröjning */
+}
+
+.bekraftelse-rubriken {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: var(--morkt);
+    margin: 0 0 15px 0;
+}
+
+.bekraftelse-texten {
+    font-size: 0.97rem;
+    color: #777;
+    line-height: 1.75;
+    max-width: 420px;
+    margin: 0 0 30px 0;
+}
+
+.tillbaka-knappen {
+    padding: 14px 35px;
+    font-size: 0.88rem;
+}
+
+/* ================================================
+   KARTAN OCH ÖPPETTIDER
+   ================================================ */
+
+.karta-kolumnen {
+    flex: 1;
+    position: sticky; /* kartan följer med när man scrollar i formuläret */
+    top: 20px;
+}
+
+.karta-rubriken {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--morkt);
+    margin: 8px 0 10px 0;
+}
+
+.karta-texten {
+    font-size: 0.93rem;
+    color: #777;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+}
+
+/* själva iframe-kartan */
+.kartan {
+    width: 100%;
+    height: 280px;
+    border: none;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.karta-lank-texten {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    color: #aaa;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 30px;
+    transition: color 0.2s;
+}
+
+.karta-lank-texten:hover {
+    color: var(--morkt);
+}
+
+/* öppettider-boxen */
+.oppettider-boxen {
+    background-color: white;
+    border-radius: 4px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.oppettider-rubriken {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--morkt);
+    margin: 0 0 18px 0;
+}
+
+/* ================================================
+   TABELLEN – G-krav:
+   table, thead, tbody, tfoot, th, tr, td
+   varannan rad olika färg, sista rad annorlunda
+   ================================================ */
+
+.oppettider-tabellen {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* rubrikraden i thead */
+.oppettider-tabellen thead tr {
+    background-color: var(--morkt);
+    color: white;
+}
+
+.oppettider-tabellen th {
+    padding: 11px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.oppettider-tabellen td {
+    padding: 12px 15px;
+}
+
+/* ljusa rader */
+.ljus-rad {
+    background-color: var(--ljus);
+}
+
+/* lite mörkare rader */
+.mork-rad {
+    background-color: rgba(26, 26, 46, 0.04);
+}
+
+/* hover på raderna */
+.oppettider-tabellen tbody tr:hover {
+    background-color: rgba(200, 169, 110, 0.1);
+}
+
+/* tfoot – sista raden med annorlunda stil – G-krav */
+.oppettider-tabellen tfoot tr {
+    border-top: 2px solid var(--morkt);
+    background-color: rgba(26, 26, 46, 0.06);
+}
+
+.oppettider-tabellen tfoot td {
+    font-size: 0.78rem;
+    color: #999;
+    font-style: italic;
+    padding: 10px 15px;
+}
