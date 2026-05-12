@@ -383,9 +383,7 @@
 }
 
 /* ================================================
-   TABELLEN – G-krav:
-   table, thead, tbody, tfoot, th, tr, td
-   varannan rad olika färg, sista rad annorlunda
+   TABELLEN 
    ================================================ */
 
 .oppettider-tabellen {
@@ -440,4 +438,69 @@
     color: #999;
     font-style: italic;
     padding: 10px 15px;
+}
+
+
+/* ================================================
+   RESPONSIV DESIGN 
+   ================================================ */
+
+/* tablet */
+@media (max-width: 900px) {
+
+    .hero-text-rutan {
+        margin-left: 30px;
+        padding: 30px;
+    }
+
+    /* formulär och karta staplas vertikalt */
+    .formular-karta-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* kartan är inte sticky på mobil */
+    .karta-kolumnen {
+        position: static;
+    }
+
+    .info-kort-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .info-kortet {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-kortet:last-child {
+        border-bottom: none;
+    }
+}
+
+/* mobil */
+@media (max-width: 600px) {
+
+    .kontakt-hero {
+        height: 220px;
+    }
+
+    .hero-text-rutan {
+        margin-left: 15px;
+        padding: 20px;
+    }
+
+    .hero-stor-rubrik {
+        font-size: 2rem;
+    }
+
+    .formular-och-karta {
+        padding: 40px 15px;
+    }
+
+    .footer-innehall {
+        flex-direction: column;
+        gap: 30px;
+    }
 }

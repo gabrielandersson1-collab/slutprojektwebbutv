@@ -1,3 +1,7 @@
+/* ------------------------------------------------
+       Progress bar 
+       ------------------------------------------------ */
+
 const slides = document.querySelectorAll(".slide");
 const totalSlides = slides.length;
 let currentIndex = 0;
@@ -6,7 +10,7 @@ let progress = 0;
 const slideNumber = document.querySelector(".slide-number");
 const progressBar = document.querySelector(".progress-bar");
 
-const slideDuration = 7000; // 5 sekunder per slide
+const slideDuration = 7000; // 7 sekunder per slide
 let progressInterval;
 
 // Visa första bilden direkt
