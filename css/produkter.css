@@ -179,10 +179,7 @@
     margin: 0 auto 55px;
 }
 
-/* Spegelvänder ordningen: bild till höger, text till vänster */
-.kategori-header-speglad {
-    flex-direction: row-reverse;
-}
+
 
 .kategori-header-text {
     flex: 1;
@@ -204,23 +201,7 @@
     margin: 0;
 }
 
-.kategori-header-bild-wrapper {
-    flex: 1;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 4px;
-}
 
-.kategori-header-bild {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.kategori-header-bild-wrapper:hover .kategori-header-bild {
-    transform: scale(1.04); /* subtil zoom vid hover */
-}
 
 /* ================================================
    VANTE-GRID – fem kolumner (mer än startsidan)
