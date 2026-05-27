@@ -365,7 +365,7 @@ body {
 
 .kvalitet-sektion {
     /* Bakgrundsbild – */
-    background-image: url("");
+    background-image: url("../images/blåbakgrund.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 

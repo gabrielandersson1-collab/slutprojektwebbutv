@@ -11,7 +11,7 @@
 
 .kontakt-hero {
     /* bakgrundsbild på herorn – MVG-krav */
-    background-image: url('');
+    background-image: url('../images/blåbakgrund.png');
     background-size: cover;
     background-position: center;
     height: 300px;
