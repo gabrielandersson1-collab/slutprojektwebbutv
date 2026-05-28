@@ -50,7 +50,7 @@
                 <h2 class="formularet-rubrik">Skicka ett meddelande</h2>
                 <p class="formularet-ingress">Fyll i formuläret nedan så hör vi av oss så fort vi kan.</p>
 
-                <!-- det här är själva formuläret, novalidate för att JS sköter valideringen -->
+                <!-- det här är själva formuläret, JS sköter valideringen -->
                 <form id="kontaktFormularet" novalidate>
 
                     <!-- namnfältet – type text -->
@@ -70,7 +70,7 @@
                         <span class="felet" id="namnFelet">Du måste ange ditt namn</span>
                     </div>
 
-                    <!-- epost-fältet – type email – VG-krav -->
+                    <!-- epost-fältet – type email -->
                     <div class="falt-gruppen">
                         <label for="epostFaltet" class="falt-texten">
                             E-postadress <span class="maste-fyllas">*</span>
@@ -87,7 +87,7 @@
                         <span class="felet" id="epostFelet">Ange en giltig e-postadress, t.ex. förnamn.efternamn@gmail.com</span>
                     </div>
 
-                    <!-- telefon – type tel, en annan input-typ –  -->
+                    <!-- telefon – type tel,  –  -->
                     <div class="falt-gruppen">
                         <label for="telefonFaltet" class="falt-texten">
                             Telefon <span class="valfritt-text">(valfritt)</span>
@@ -132,7 +132,7 @@
                         <span class="felet" id="meddelandeFelet">Skriv ett meddelande (minst 10 tecken).</span>
                     </div>
 
-                    <!-- checkbox – type checkbox, ännu en annan input-typ -->
+                    <!-- checkbox – type checkbox -->
                     <div class="falt-gruppen checkbox-raden">
                         <label class="checkbox-labeln">
                             <input
@@ -161,7 +161,7 @@
                      ============================================================ -->
                 <div class="bekraftelse-rutan" id="bekraftelseRutan">
 
-                    <!-- den här animerade checkmarken är gjord med css -->
+                    <!-- css styr detta -->
                     <div class="check-animationen">
                         <div class="check-cirkeln"></div>
                         <span class="check-bocken">✓</span>

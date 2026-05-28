@@ -36,7 +36,7 @@
     </div>
 
  
- <!-- Mobil-meny som fälls ner – styrs av JavaScript  -->
+ <!-- Mobil-meny som fälls ner   -->
     <nav class="mobil-meny" id="mobilMeny" aria-hidden="true">
         <a href="startsida.html" class="mobil-lank">Startsida</a>
         <a href="produkter.html" class="mobil-lank">Produkter</a>
@@ -47,9 +47,17 @@
 <main>
 <section class="hero">
     <div class="hero-slides">
-    <img src="images/Herobild.jpg" class="slide active" alt="Nordic Gloves hero image">
-    <img src="images/Berg.png" class="slide" alt="Bild 2"> <!-- dålig kvalitet måste kolla in den -->
-    <img src="images/Jul.jpg" class="slide" alt="Bild 3">
+    <img src="images/Herobild.jpg" 
+     alt="Nordic Gloves hero image"
+     loading="lazy" class="slide active">
+    
+     <img src="images/Berg.png"  
+    alt="Bild 2"
+    loading="lazy"  class="slide"> <!-- dålig kvalitet måste kolla in den -->
+   
+    <img src="images/Jul.jpg" 
+    alt="Bild 3"
+    loading="lazy"  class="slide">
     </div>
     
     <h2 class="hero-text">Nordic Gloves</h2>
@@ -77,7 +85,9 @@
                 <a href="produkter.html" class="btn btn-mork">Utforska alla produkter</a>
             </div>
             <div class="om-oss-bild-wrapper">
-                <img  src="images/Om-oss.jpg " class="om-oss-foto" alt="vantar som ligger på ett träbord">
+                <img  src="images/Om-oss.jpg " 
+                 alt="vantar som ligger på ett träbord"
+                 loading="lazy" class="om-oss-foto">
             </div>
         </div>
     </section>
@@ -117,7 +127,7 @@
         <div class="kvalitet-overlay">
             <h2 class="kvalitet-rubrik">Kvalitet du kan lita på</h2>
             <p class="kvalitet-text">Varje par Nordic Gloves är tillverkat med omsorg och de bästa naturmaterialen från Skandinavien.</p>
-            <!-- Korrekt UL-lista – MVG-krav -->
+            <!-- Ul lista -->
             <ul class="kvalitet-lista">
                 <li>Hållbara naturmaterial</li>
                 <li>Producerat i Sverige</li>
