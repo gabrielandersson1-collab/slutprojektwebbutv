@@ -5,29 +5,6 @@ validerar formuläret och visar bekräftelsen när man skickar
 /* väntar tills sidan är klar  */
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ---- hamburgar-menyn, samma som på de andra sidorna ---- */
-    const hamburgarKnapp = document.getElementById("hamburgarKnapp");
-    const mobilMeny = document.getElementById("mobilMeny");
-
-    if (hamburgarKnapp && mobilMeny) {
-        hamburgarKnapp.addEventListener("click", function () {
-            hamburgarKnapp.classList.toggle("oppen");
-            mobilMeny.classList.toggle("oppen");
-            const arOppen = mobilMeny.classList.contains("oppen");
-            hamburgarKnapp.setAttribute("aria-expanded", arOppen);
-            mobilMeny.setAttribute("aria-hidden", !arOppen);
-        });
-
-        document.addEventListener("click", function (e) {
-            const klickadeUtanfor = !hamburgarKnapp.contains(e.target) && !mobilMeny.contains(e.target);
-            if (klickadeUtanfor && mobilMeny.classList.contains("oppen")) {
-                hamburgarKnapp.classList.remove("oppen");
-                mobilMeny.classList.remove("oppen");
-                hamburgarKnapp.setAttribute("aria-expanded", false);
-                mobilMeny.setAttribute("aria-hidden", true);
-            }
-        });
-    }
 
     /* ================================================
        HÄMTA ALLA FÄLT OCH ELEMENT
